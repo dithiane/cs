@@ -1,0 +1,31 @@
+1. Runtime Analysis
+
+Results for the extraLargeArray
+insert 1.161843513 s
+append 9.064528 ms
+Results for the largeArray
+insert 10.364957 ms
+append 317.208 μs
+Results for the mediumArray
+insert 130.998 μs
+append 22.075 μs
+Results for the smallArray
+insert 5.966 μs
+append 2.396 μs
+Results for the tinyArray
+insert 19.398 μs
+append 6.224 μs
+
+How does each function “scale”? 
+Which of the two functions scales better? 
+How can you tell?
+
+The bigger the array, the bigger the difference. 
+Push() is faster.
+Unshift() must shift all the elements that are already in the array, 
+Push() must insert an element at the end of the array, so none of the indexes of the array elements must change.
+
+The push methods are fast, but the unshift method is slow, because
+work with the end of the array is faster than with its beginning. 
+Just taking and removing element number 0 is not enough. 
+You also need to re-number the rest of the elements.
